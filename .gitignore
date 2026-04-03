@@ -1,6 +1,7 @@
 # Java
 hs_err_pid*
 zookeeper-server/version-2/*
+node*/data/version-2/*
 
 # Git
 *.orij
@@ -46,6 +47,7 @@ nbactions.xml
 # vscode
 classes
 .vscode
+!.vscode/launch.json
 
 # Other
 *~
