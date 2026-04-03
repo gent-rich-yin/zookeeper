@@ -48,10 +48,6 @@
       "mainClass": "com.example.zk.simple.Main",
       "cwd": "${workspaceFolder}/my-tests",
       "console": "integratedTerminal",
-      "classPaths": [
-        "${workspaceFolder}/my-tests/target/classes",
-        "${workspaceFolder}/my-tests/target/dependency/*"
-      ]
     }
   ],
   "compounds": [
