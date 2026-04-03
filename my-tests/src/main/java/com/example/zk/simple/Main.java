@@ -21,6 +21,18 @@ public class Main {
             }
         });
 
+        Thread stateWatcher = new Thread(() -> {
+            while (true) {
+                try {
+                    System.out.println("ZK State: " + zk.getState());
+                    Thread.sleep(10000);
+                } catch (InterruptedException e) {
+                    e.printStackTrace();
+                }
+            }
+        });
+        stateWatcher.start();
+
         Runtime.getRuntime().addShutdownHook(new Thread(() -> {
             try {
                 System.out.println("Shutdown signal received, closing ZooKeeper client...");
