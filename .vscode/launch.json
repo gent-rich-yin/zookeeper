@@ -40,6 +40,18 @@
       "args": ["-server", "127.0.0.1:2181,127.0.0.1:2182,127.0.0.1:2183"],
       "console": "integratedTerminal",
       "vmArgs": "-Dzookeeper.log.dir=${workspaceFolder}/logs/cli -Dzookeeper.console.threshold=INFO -Dzookeeper.log.threshold=INFO -Dlogback.configurationFile=${workspaceFolder}/conf/logback.xml"
+    },
+    {
+      "name": "ZK Simple",
+      "type": "java",
+      "request": "launch",
+      "mainClass": "com.example.zk.simple.Main",
+      "cwd": "${workspaceFolder}/my-tests",
+      "console": "integratedTerminal",
+      "classPaths": [
+        "${workspaceFolder}/my-tests/target/classes",
+        "${workspaceFolder}/my-tests/target/dependency/*"
+      ]
     }
   ],
   "compounds": [
