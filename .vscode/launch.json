@@ -1,0 +1,51 @@
+{
+  "version": "0.2.0",
+  "configurations": [
+    {
+      "name": "ZK node1",
+      "type": "java",
+      "request": "launch",
+      "mainClass": "org.apache.zookeeper.server.quorum.QuorumPeerMain",
+      "cwd": "${workspaceFolder}/zookeeper-server",
+      "args": ["${workspaceFolder}/node1/conf/zoo1.conf"],
+      "vmArgs": "-Dzookeeper.log.dir=${workspaceFolder}/logs/node1 -Dzookeeper.console.threshold=INFO -Dzookeeper.log.threshold=INFO -Dlogback.configurationFile=${workspaceFolder}/conf/logback.xml",
+      "console": "integratedTerminal"
+    },
+    {
+      "name": "ZK node2",
+      "type": "java",
+      "request": "launch",
+      "mainClass": "org.apache.zookeeper.server.quorum.QuorumPeerMain",
+      "cwd": "${workspaceFolder}/zookeeper-server",
+      "args": ["${workspaceFolder}/node2/conf/zoo2.conf"],
+      "vmArgs": "-Dzookeeper.log.dir=${workspaceFolder}/logs/node2 -Dzookeeper.console.threshold=INFO -Dzookeeper.log.threshold=INFO -Dlogback.configurationFile=${workspaceFolder}/conf/logback.xml",
+      "console": "integratedTerminal"
+    },
+    {
+      "name": "ZK node3",
+      "type": "java",
+      "request": "launch",
+      "mainClass": "org.apache.zookeeper.server.quorum.QuorumPeerMain",
+      "cwd": "${workspaceFolder}/zookeeper-server",
+      "args": ["${workspaceFolder}/node3/conf/zoo3.conf"],
+      "vmArgs": "-Dzookeeper.log.dir=${workspaceFolder}/logs/node3 -Dzookeeper.console.threshold=INFO -Dzookeeper.log.threshold=INFO -Dlogback.configurationFile=${workspaceFolder}/conf/logback.xml",
+      "console": "integratedTerminal"
+    },
+    {
+      "name": "ZK CLI",
+      "type": "java",
+      "request": "launch",
+      "mainClass": "org.apache.zookeeper.ZooKeeperMain",
+      "cwd": "${workspaceFolder}/zookeeper-server",
+      "args": ["-server", "127.0.0.1:2181,127.0.0.1:2182,127.0.0.1:2183"],
+      "console": "integratedTerminal",
+      "vmArgs": "-Dzookeeper.log.dir=${workspaceFolder}/logs/cli -Dzookeeper.console.threshold=INFO -Dzookeeper.log.threshold=INFO -Dlogback.configurationFile=${workspaceFolder}/conf/logback.xml"
+    }
+  ],
+  "compounds": [
+    {
+      "name": "ZooKeeper 3-node cluster",
+      "configurations": ["ZK node1", "ZK node2", "ZK node3"]
+    }
+  ]
+}

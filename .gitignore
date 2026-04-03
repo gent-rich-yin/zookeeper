@@ -47,6 +47,7 @@ nbactions.xml
 # vscode
 classes
 .vscode
+!.vscode/
 !.vscode/launch.json
 
 # Other
