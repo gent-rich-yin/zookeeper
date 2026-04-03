@@ -344,6 +344,7 @@
         <executions>
           <execution>
             <id>publish-test-jar</id>
+            <phase>compile</phase>
             <goals>
               <goal>test-jar</goal>
             </goals>
