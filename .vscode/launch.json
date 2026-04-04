@@ -47,7 +47,32 @@
       "request": "launch",
       "mainClass": "com.example.zk.simple.Main",
       "cwd": "${workspaceFolder}/my-tests",
+      "sourcePaths": ["${workspaceFolder}/my-tests/src/main/java"],
+      "console": "integratedTerminal"
+    },
+    {
+      "name": "Nio Echo Server",
+      "type": "java",
+      "request": "launch",
+      "mainClass": "com.example.nio.echo.NioServer",
+      "cwd": "${workspaceFolder}/my-tests",
       "console": "integratedTerminal",
+      "sourcePaths": ["${workspaceFolder}/my-tests/src/main/java"],
+      "classPaths": [
+        "${workspaceFolder}/my-tests/target/classes"
+      ]
+    },
+    {
+      "name": "Nio Echo Client",
+      "type": "java",
+      "request": "launch",
+      "mainClass": "com.example.nio.echo.NioClient",
+      "cwd": "${workspaceFolder}/my-tests",
+      "console": "integratedTerminal",
+      "sourcePaths": ["${workspaceFolder}/my-tests/src/main/java"],
+      "classPaths": [
+        "${workspaceFolder}/my-tests/target/classes"
+      ]
     }
   ],
   "compounds": [

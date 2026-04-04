@@ -1,3 +1,9 @@
 {
-    "java.configuration.updateBuildConfiguration": "interactive"
+    "java.configuration.updateBuildConfiguration": "interactive",
+    "java.debug.settings.onBuildFailureProceed": true
+    // "java.configuration.runtimes": [{
+    //     "name": "JavaSE-25",
+    //     "path": "D:\\Software\\jdk-25.0.2",
+    //     "default": true
+    // }]    
 }
