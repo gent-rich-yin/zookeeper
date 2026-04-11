@@ -38,6 +38,7 @@ public class SendAckRequestProcessor implements RequestProcessor, Flushable {
     }
 
     public void processRequest(Request si) {
+        LOG.info("==== RY ==== Follower ACK: {}", si);
         if (si.type != OpCode.sync) {
             QuorumPacket qp = new QuorumPacket(Leader.ACK, si.getHdr().getZxid(), null, null);
             try {

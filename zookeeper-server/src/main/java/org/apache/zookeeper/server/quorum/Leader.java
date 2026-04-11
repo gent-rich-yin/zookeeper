@@ -1293,6 +1293,7 @@ public class Leader extends LearnerMaster {
      * @return the proposal that is queued to send to all the members
      */
     public Proposal propose(Request request) throws XidRolloverException {
+        LOG.info("==== RY ==== Propose: {}", request);
         if (request.isThrottled()) {
             LOG.error("Throttled request send as proposal: {}. Exiting.", request);
             ServiceUtils.requestSystemExit(ExitCode.UNEXPECTED_ERROR.getValue());

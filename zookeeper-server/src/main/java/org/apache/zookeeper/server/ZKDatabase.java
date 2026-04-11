@@ -287,7 +287,9 @@ public class ZKDatabase {
      */
     public long loadDataBase() throws IOException {
         long startTime = Time.currentElapsedTime();
+        LOG.info("====== RY: dataTree nodes before restore: {}", dataTree.getNodeCount());
         long zxid = snapLog.restore(dataTree, sessionsWithTimeouts, commitProposalPlaybackListener);
+        LOG.info("====== RY: dataTree nodes after restore: {}", dataTree.getNodeCount());
         initialized = true;
         long loadTime = Time.currentElapsedTime() - startTime;
         ServerMetrics.getMetrics().DB_INIT_TIME.add(loadTime);
